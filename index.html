@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Escudo Digital: privacidad y protección de datos | Fabián Arturo Barragán Pimiento</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f8ff;--card:#fff;--ink:#0a2a6b;--mut:#4a5a75;--acc:#ffd100;--teal:#1456c4;--line:#cfdcf5;--bad:#c0392b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#061a45;--card:#0f2a5e;--ink:#eef3fb;--mut:#aab8d0;--line:#28458a;--teal:#8db8ff;--bad:#ff7b6b}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Georgia,sans-serif;line-height:1.15;margin:0 0 .5em}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink);display:flex;gap:4px;overflow-x:auto;padding:8px 12px}
+nav a{color:#fff;text-decoration:none;padding:6px 12px;border-radius:99px;white-space:nowrap;font-size:14px}
+nav a:hover,nav a:focus-visible{background:var(--acc);color:#0a2a6b;outline:none}
+header{background:var(--ink);color:#fff;padding:64px 20px 72px}
+.w{max-width:900px;margin:0 auto}
+header h1{font-size:clamp(2.4rem,7vw,4.4rem);font-weight:800}
+header p{max-width:60ch;color:#cfd9ea;font-size:1.15rem}
+.btn{display:inline-block;background:var(--acc);color:#0a2a6b;font-weight:600;padding:12px 22px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:600}
+section{padding:48px 20px;border-bottom:1px solid var(--line)}
+section h2{font-size:2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}th{background:var(--ink);color:#fff}
+input[type=text],select{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;width:100%;background:var(--card);color:var(--ink)}
+.meter{height:12px;background:var(--line);border-radius:6px;overflow:hidden;margin:10px 0}.meter i{display:block;height:100%;width:0;transition:width .3s,background .3s}
+pre{background:#061a45;color:#e6edf7;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}
+.ph{border:2px dashed var(--line);border-radius:10px;padding:22px;text-align:center;color:var(--mut)}
+.q{margin:14px 0}.q label{display:block;padding:6px 0;cursor:pointer}
+.ok{color:var(--teal);font-weight:600}.no{color:var(--bad);font-weight:600}
+footer{padding:30px 20px;color:var(--mut);font-size:14px}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+header{position:relative;overflow:hidden;background:radial-gradient(circle at 82% 30%,rgba(255,209,0,.28),transparent 42%),radial-gradient(circle at 10% 100%,rgba(255,255,255,.14),transparent 40%),linear-gradient(135deg,#061a45,#0f3f9e)!important;padding:72px 20px 84px!important}
+.hero{display:flex;align-items:center;gap:32px;justify-content:space-between}.shield{width:230px;flex:none;filter:drop-shadow(0 12px 30px rgba(0,0,0,.45))}
+.brand{display:inline-block;background:var(--acc);color:#0a2a6b;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;padding:6px 16px;border-radius:99px;margin:0 0 18px;font-size:1rem}
+header h1{font-size:clamp(2.2rem,6.5vw,4rem)!important;letter-spacing:-.02em;margin-bottom:.4em}
+.btn{border-radius:99px!important;box-shadow:0 4px 14px rgba(0,0,0,.18)}.btn+.btn{background:transparent!important;color:#fff!important;border:2px solid #fff!important;box-shadow:none}
+nav{justify-content:flex-start;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+section:nth-of-type(even){background:var(--card)}
+section{padding:64px 20px!important}
+section h2{font-size:2.2rem!important;margin-bottom:.8em}
+section h2::after{content:"";display:block;width:64px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--acc),var(--teal));margin-top:10px}
+h3{color:var(--teal)}
+.card{border-top:5px solid var(--teal);box-shadow:0 6px 20px rgba(18,32,58,.08);border-radius:14px!important}
+section:nth-of-type(even) .card{background:var(--bg)}
+tbody tr:nth-child(even) td{background:rgba(20,86,196,.07)}
+table{border-radius:10px;overflow:hidden}
+.meter{height:16px!important}
+pre{border-left:5px solid var(--acc)}
+@media(max-width:700px){.shield{display:none}.hero{display:block}}
+nav{background:#0a2a6b!important;border-bottom:4px solid #ffd100;padding:10px 14px!important;gap:6px!important}
+nav a{color:#fff!important;font-weight:600;font-size:15px!important}
+nav a:hover,nav a:focus-visible{background:#ffd100!important;color:#0a2a6b!important}
+th{background:#0a2a6b!important;color:#fff!important}
+</style>
+</head>
+<body>
+<nav aria-label="Menú principal">
+<a href="#inicio">Inicio</a><a href="#conceptos">Conceptos</a><a href="#pc">Pensamiento computacional</a><a href="#pcrit">Pensamiento crítico</a><a href="#datos">Datos</a><a href="#bd">Base de datos</a><a href="#resultados">Resultados</a><a href="#algoritmos">Algoritmos</a><a href="#recursos">Recursos</a><a href="#quiz">Formulario</a><a href="#conclusiones">Conclusiones</a><a href="#fuentes">Fuentes</a>
+</nav>
+
+<header id="inicio"><div class="w hero"><div>
+<p class="brand">Escudo Digital</p><h1>Privacidad y protección de datos</h1>
+<p>¿Qué riesgos se presentan cuando compartimos datos personales sin precaución? Un proyecto de Tecnología e Informática, grado décimo, que une bases de datos, algoritmos y análisis crítico para aprender a protegernos en internet.</p>
+<p><a class="btn" href="#quiz">Pon a prueba lo que sabes</a> &nbsp; <a class="btn" href="#algoritmos">Prueba el evaluador de contraseñas</a></p>
+<p style="font-size:14px">Autor: Fabián Arturo Barragán Pimiento · Grado 10° · Colegio Técnico San Carlos</p></div><svg class="shield" viewBox="0 0 200 240" aria-hidden="true"><path d="M100 8l80 30v66c0 56-36 100-80 124C56 204 20 160 20 104V38z" fill="#ffd100"/><path d="M100 24l64 24v56c0 46-29 82-64 102-35-20-64-56-64-102V48z" fill="#1456c4"/><path d="M68 118l22 22 44-48" stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/><g fill="#ffd100"><circle cx="60" cy="62" r="5"/><circle cx="140" cy="62" r="5"/><circle cx="100" cy="198" r="5"/></g></svg>
+</div></header>
+
+<section id="conceptos"><div class="w">
+<h2>Conceptos fundamentales</h2>
+<p>Los <b>datos personales</b> son cualquier información que me identifica o permite identificarme: mi nombre, mi número de documento, mi voz o mis fotos. La <b>privacidad</b> es mi derecho a decidir quién conoce esa información y para qué la usa. Mi <b>identidad digital</b> es la imagen que se forma de mí con todo lo que publico, comparto y dejo registrado en internet. Por ejemplo, una foto con el uniforme del colegio puede revelar dónde estudio, y alguien con malas intenciones podría usar ese dato para suplantarme o seguirme.</p>
+<div class="g">
+<div class="card"><h3>Dato público</h3><p>Información que cualquiera puede conocer sin causar daño. Ej.: tu nombre de usuario en un juego.</p></div>
+<div class="card"><h3>Dato privado</h3><p>Información personal que decides compartir con cuidado. Ej.: dirección, teléfono, colegio.</p></div>
+<div class="card"><h3>Dato sensible</h3><p>Información que puede discriminar o dañar si se expone. Ej.: salud, biometría, contraseñas.</p></div>
+</div>
+<p><b>Consentimiento:</b> aceptar de forma libre e informada que una persona u organización use mis datos; en Colombia lo regula la Ley 1581 de 2012. <b>Permisos de aplicaciones:</b> accesos que una app pide (cámara, micrófono, ubicación); si una linterna pide mis contactos, es una señal de alerta. <b>Suplantación:</b> hacerse pasar por otra persona usando sus datos. <b>Ingeniería social:</b> engañar a las personas, no a las máquinas, para que entreguen información, por ejemplo con una llamada que dice ser del banco.</p><h3>Mis derechos como titular de datos</h3><p>La Ley 1581 de 2012 reconoce, entre otros, el derecho a conocer, actualizar y rectificar mis datos, a pedir prueba de la autorización que di, a saber cómo se usan, a presentar quejas ante la Superintendencia de Industria y Comercio y a revocar la autorización o pedir que se supriman. También existe el derecho al <i>habeas data</i>. Cuando una persona es menor de edad, sus datos tienen protección especial.</p><h3>Riesgos más comunes</h3><div class="g"><div class="card"><h3>Phishing</h3><p>Mensajes falsos que imitan a un banco o una tienda para que entregue mis claves.</p></div><div class="card"><h3>Suplantación</h3><p>Alguien crea un perfil con mi foto y mi nombre para engañar a mis contactos.</p></div><div class="card"><h3>Permisos excesivos</h3><p>Una app recoge ubicación o contactos que no necesita para funcionar.</p></div><div class="card"><h3>Contraseñas repetidas</h3><p>Si se filtra una cuenta, el atacante prueba la misma clave en todas las demás.</p></div></div><h3>Buenas prácticas de protección</h3><ul><li>Usar una contraseña larga y distinta en cada cuenta, y un gestor de contraseñas si es posible.</li><li>Activar la verificación en dos pasos.</li><li>Revisar los permisos de cada app y quitar los que no necesita.</li><li>Configurar los perfiles como privados y pensar antes de publicar ubicación o fotos del colegio.</li><li>No abrir enlaces ni archivos de desconocidos; verificar por otro medio.</li><li>Mantener actualizados el celular y las apps, y hacer copias de seguridad.</li></ul>
+</div></section>
+
+<section id="pc"><div class="w">
+<h2>Pensamiento computacional</h2>
+<div class="g">
+<div class="card"><h3>Descomposición</h3><p>Proteger mi identidad digital se divide en: contraseñas, permisos, redes públicas y qué publico.</p></div>
+<div class="card"><h3>Patrones</h3><p>Los mensajes de phishing repiten señales: urgencia, enlaces extraños, errores de escritura.</p></div>
+<div class="card"><h3>Abstracción</h3><p>De una contraseña solo importan su longitud y los tipos de caracteres, no la contraseña misma.</p></div>
+<div class="card"><h3>Algoritmos</h3><p>Pasos precisos para evaluar un riesgo y recomendar una acción (ver sección Algoritmos).</p></div>
+</div></div></section>
+
+<section id="pcrit"><div class="w">
+<h2>Pensamiento crítico</h2>
+<p>Antes de compartir un dato, pregúntate: ¿quién lo pide?, ¿para qué lo necesita?, ¿qué pasaría si lo conociera un desconocido? Diferencia siempre hechos, opiniones y publicidad, y contrasta con mínimo dos fuentes.</p>
+<div class="sc"><table><tr><th>Criterio</th><th>Pregunta para auditar una fuente</th></tr>
+<tr><td>Autoridad</td><td>¿Quién creó la información?</td></tr><tr><td>Actualidad</td><td>¿Cuándo se publicó o actualizó?</td></tr>
+<tr><td>Evidencia</td><td>¿Presenta datos verificables?</td></tr><tr><td>Propósito</td><td>¿Informa, vende, persuade o entretiene?</td></tr>
+<tr><td>Sesgo</td><td>¿Muestra una sola perspectiva?</td></tr></table></div>
+<h3>Auditoría de tres fuentes usadas</h3><div class="sc"><table><tr><th>Criterio</th><th>Ley 1581 de 2012</th><th>Superintendencia de Industria y Comercio</th><th>INCIBE (Internet Segura for Kids)</th></tr><tr><td>Autoridad</td><td>Congreso de Colombia</td><td>Entidad estatal que vigila la protección de datos</td><td>Instituto público de ciberseguridad de España</td></tr><tr><td>Actualidad</td><td>2012, sigue vigente</td><td>Se actualiza con frecuencia</td><td>Se actualiza con frecuencia</td></tr><tr><td>Evidencia</td><td>Texto legal</td><td>Normas y guías oficiales</td><td>Guías y estudios</td></tr><tr><td>Propósito</td><td>Regular</td><td>Informar y vigilar</td><td>Informar y educar</td></tr><tr><td>Coherencia</td><td>Coincide con las otras dos</td><td>Coincide con la ley</td><td>Coincide en las prácticas</td></tr><tr><td>Sesgo</td><td>Perspectiva jurídica</td><td>Perspectiva institucional</td><td>Contexto español</td></tr><tr><td>Utilidad</td><td>Alta</td><td>Alta</td><td>Media-alta</td></tr></table></div>
+</div></section>
+
+<section id="datos"><div class="w">
+<h2>Datos</h2>
+<p><b>Origen:</b> datos simulados, construidos a partir de casos y riesgos descritos en las fuentes consultadas (20 registros de riesgos, 3 categorías de dato). Los datos de este sitio son <b>ficticios</b> y sirven de ejemplo; reemplázalos por los tuyos. No se almacenan contraseñas reales ni datos personales de estudiantes.</p>
+<ul><li><b>Limpieza:</b> eliminar duplicados y revisar valores vacíos.</li><li><b>Organización:</b> cuatro tablas relacionadas por claves.</li><li><b>Tipo:</b> cualitativos (tipo de dato) y cuantitativos (nivel de riesgo 1–5).</li></ul><h3>Muestra de registros (tabla Riesgo, datos simulados)</h3><div class="sc"><table><tr><th>id</th><th>Riesgo</th><th>Tipo de dato</th><th>Nivel</th><th>Medida preventiva</th></tr><tr><td>1</td><td>Robo de cuenta por clave repetida</td><td>Sensible</td><td>5</td><td>Clave única y verificación en dos pasos</td></tr><tr><td>2</td><td>Phishing por correo</td><td>Privado</td><td>4</td><td>No abrir enlaces, verificar el remitente</td></tr><tr><td>3</td><td>Fotografía con uniforme y ubicación</td><td>Privado</td><td>3</td><td>Perfil privado, quitar ubicación</td></tr><tr><td>4</td><td>App que pide acceso a contactos</td><td>Privado</td><td>3</td><td>Revisar y negar permisos</td></tr><tr><td>5</td><td>Filtración de datos de salud</td><td>Sensible</td><td>5</td><td>Compartir solo con consentimiento</td></tr><tr><td>6</td><td>Apodo usado para acoso</td><td>Público</td><td>2</td><td>Reportar y bloquear</td></tr><tr><td>7</td><td>Red wifi pública sin protección</td><td>Privado</td><td>4</td><td>No hacer trámites en redes públicas</td></tr><tr><td>8</td><td>Uso de huella en app no confiable</td><td>Sensible</td><td>4</td><td>Usar solo apps oficiales</td></tr></table></div><h3>Análisis crítico de los datos</h3><ul><li><b>Patrones:</b> los riesgos de nivel 4 o 5 casi siempre implican claves, datos sensibles o engaño a la persona.</li><li><b>Datos que faltan:</b> cuántas personas reales sufrieron cada riesgo; sin eso no se puede medir su frecuencia.</li><li><b>Valores atípicos:</b> ninguno, porque los niveles están entre 1 y 5, pero el nivel lo asigné yo con un criterio.</li><li><b>Errores posibles:</b> asignar un nivel por intuición y no por evidencia, o repetir un riesgo con otro nombre.</li><li><b>Conclusión que sí puede formularse:</b> las medidas básicas reducen riesgos de nivel alto. <b>La que no:</b> cuál riesgo es el más frecuente en Colombia.</li><li><b>Riesgo de decidir sin información suficiente:</b> gastar esfuerzo en una amenaza poco probable y descuidar una real.</li></ul><h3>Detección de sesgos</h3><p>Posibles sesgos: muestra insuficiente y simulada, categorías que pueden solaparse (un dato de salud puede ser privado o sensible), selección parcial de casos conocidos, y mi interpretación al asignar niveles. Para reducirlos, definí reglas claras de clasificación y revisé duplicados.</p>
+</div></section>
+
+<section id="bd"><div class="w">
+<h2>Base de datos</h2>
+<p>Modelo de ejemplo con cuatro tablas. Una clave principal (PK) identifica cada registro y la clave foránea (FK) crea la relación.</p>
+<div class="g">
+<div class="card"><h3>Riesgo</h3><p>PK id_riesgo<br>nombre<br>FK id_tipo_dato<br>nivel (1–5)<br>FK id_medida</p></div>
+<div class="card"><h3>TipoDato</h3><p>PK id_tipo_dato<br>nombre<br>categoría (público, privado, sensible)</p></div>
+<div class="card"><h3>Medida</h3><p>PK id_medida<br>descripción<br>FK id_recurso</p></div>
+<div class="card"><h3>Recurso</h3><p>PK id_recurso<br>nombre<br>enlace</p></div>
+</div>
+<h3>Diagrama entidad-relación</h3><div class="sc"><svg viewBox="0 0 700 300" width="100%" style="min-width:560px" role="img" aria-label="Diagrama entidad-relación con cuatro tablas"><g font-size="13" fill="currentColor"><g stroke="#1456c4" stroke-width="2" fill="none"><path d="M190 113H265"/><path d="M435 78H510"/><path d="M595 190V126"/></g><text x="196" y="106" font-weight="700">1</text><text x="248" y="106" font-weight="700">N</text><text x="441" y="71" font-weight="700">N</text><text x="493" y="71" font-weight="700">1</text><text x="603" y="182" font-weight="700">1</text><text x="603" y="144" font-weight="700">N</text><text x="196" y="131" font-size="11">clasifica</text><text x="440" y="96" font-size="11">previene</text><text x="610" y="163" font-size="11">orienta</text><g stroke="#1456c4" stroke-width="2" style="fill:var(--card)"><rect x="20" y="70" width="170" height="86" rx="6"/><rect x="265" y="30" width="170" height="160" rx="6"/><rect x="510" y="30" width="170" height="96" rx="6"/><rect x="510" y="190" width="170" height="96" rx="6"/></g><g fill="#1456c4"><rect x="20" y="70" width="170" height="26" rx="6"/><rect x="265" y="30" width="170" height="26" rx="6"/><rect x="510" y="30" width="170" height="26" rx="6"/><rect x="510" y="190" width="170" height="26" rx="6"/></g><g fill="#fff" font-weight="700" text-anchor="middle"><text x="105" y="88">TipoDato</text><text x="350" y="48">Riesgo</text><text x="595" y="48">Medida</text><text x="595" y="208">Recurso</text></g><text x="30" y="114">PK id_tipo_dato</text><text x="30" y="132">nombre</text><text x="30" y="150">categoría</text><text x="275" y="76">PK id_riesgo</text><text x="275" y="94">nombre</text><text x="275" y="112">FK id_tipo_dato</text><text x="275" y="130">nivel (1 a 5)</text><text x="275" y="148">FK id_medida</text><text x="520" y="76">PK id_medida</text><text x="520" y="94">descripción</text><text x="520" y="112">FK id_recurso</text><text x="520" y="236">PK id_recurso</text><text x="520" y="254">nombre</text><text x="520" y="272">enlace</text></g></svg></div><p style="font-size:14px">Lectura: un tipo de dato clasifica muchos riesgos, una medida previene muchos riesgos y un recurso orienta muchas medidas (relaciones de uno a muchos).</p>
+<h3>Diccionario de datos (tabla Riesgo)</h3><div class="sc"><table><tr><th>Campo</th><th>Tipo</th><th>Regla de validación</th></tr><tr><td>id_riesgo</td><td>Autonumérico (PK)</td><td>Único, no vacío</td></tr><tr><td>nombre</td><td>Texto (80)</td><td>Obligatorio, sin duplicados</td></tr><tr><td>id_tipo_dato</td><td>Número (FK)</td><td>Debe existir en TipoDato</td></tr><tr><td>nivel</td><td>Número entero</td><td>Entre 1 y 5</td></tr><tr><td>id_medida</td><td>Número (FK)</td><td>Debe existir en Medida</td></tr></table></div><p><b>Consultas pensadas:</b> riesgos por categoría (resumen), riesgos de nivel 4 o más (criterio), riesgos de una categoría elegida (parámetros), riesgos con su medida y recurso (varias tablas).</p>
+</div></section>
+
+<section id="resultados"><div class="w">
+<h2>Resultados</h2>
+<p><b>Consulta de ejemplo:</b> ¿cuántos riesgos hay por categoría de dato? (consulta de resumen con dos tablas).</p>
+<div class="g"><div class="card"><h3>Riesgos por categoría de dato</h3><div id="c1"></div></div><div class="card"><h3>Nivel promedio de riesgo por categoría</h3><div id="c2"></div></div></div>
+<h3 style="margin-top:22px">Tabla comparativa</h3>
+<div class="sc"><table><tr><th>Medida</th><th>Esfuerzo</th><th>Protección</th><th>Contra qué</th></tr>
+<tr><td>Contraseña larga y única</td><td>Bajo</td><td>Alta</td><td>Robo de cuentas</td></tr>
+<tr><td>Verificación en dos pasos</td><td>Medio</td><td>Muy alta</td><td>Suplantación</td></tr>
+<tr><td>Revisar permisos de apps</td><td>Bajo</td><td>Media</td><td>Recolección excesiva</td></tr>
+<tr><td>No usar redes públicas para trámites</td><td>Bajo</td><td>Media</td><td>Interceptación</td></tr></table></div>
+<p><b>Interpretación:</b> los datos sensibles son pocos frente a los privados, pero tienen el nivel de riesgo promedio más alto (4,6 de 5). Sí puede concluirse que mientras más sensible es un dato, más protección necesita. No puede concluirse que los datos públicos sean siempre inofensivos, porque combinados con otros pueden identificar a alguien. Como los datos son simulados y pocos, sirven para practicar el análisis, no para describir a toda la población.</p>
+</div></section>
+
+<section id="algoritmos"><div class="w">
+<h2>Algoritmos</h2>
+<div class="card"><h3>Evaluador de contraseñas (demostración)</h3>
+<p>Escribe una contraseña de prueba. No se guarda ni se envía a ningún lugar. No uses una real.</p>
+<input type="text" id="pw" placeholder="Contraseña de prueba" autocomplete="off">
+<div class="meter"><i id="bar"></i></div><div id="pwr">Escribe para evaluar.</div></div>
+<div class="card" style="margin-top:14px"><h3>Clasificador de datos</h3>
+<select id="sel"><option value="">Elige un dato…</option><option value="0">Nombre de usuario en un juego</option><option value="1">Número de celular</option><option value="2">Dirección de casa</option><option value="3">Historia clínica</option><option value="4">Huella digital</option></select>
+<p id="selr"></p></div>
+<div class="card" style="margin-top:14px"><h3>Detector de phishing (contador y decisión múltiple)</h3><p>Marca las señales que ves en un mensaje:</p><label><input type="checkbox" class="ph1"> Pide mis claves o datos personales</label><br><label><input type="checkbox" class="ph1"> Genera urgencia o amenaza</label><br><label><input type="checkbox" class="ph1"> Tiene un enlace extraño</label><br><label><input type="checkbox" class="ph1"> Tiene errores de escritura</label><br><label><input type="checkbox" class="ph1"> El remitente no es el oficial</label><p id="phr">Señales: 0. Riesgo bajo.</p></div>
+<h3 style="margin-top:22px">Diagrama de flujo: evaluar contraseña</h3>
+<pre class="mermaid">flowchart TD
+A([Inicio]) --> B[/Leer contraseña/]
+B --> C[puntos = 0]
+C --> D{longitud >= 8?}
+D -- Sí --> E[puntos = puntos + 1]
+D -- No --> F
+E --> F{tiene números y símbolos?}
+F -- Sí --> G[puntos = puntos + 2]
+F -- No --> H
+G --> H{puntos >= 3?}
+H -- Sí --> I[/Segura/]
+H -- No --> J[/Débil/]
+I --> K([Fin])
+J --> K</pre>
+<h3>Pseudocódigo</h3>
+<pre>INICIO
+  LEER clave
+  puntos ← 0
+  SI longitud(clave) ≥ 8 ENTONCES puntos ← puntos + 1
+  SI tieneNumero(clave) Y tieneSimbolo(clave) ENTONCES puntos ← puntos + 2
+  SI puntos ≥ 3 ENTONCES ESCRIBIR "Segura"
+  SINO ESCRIBIR "Débil"
+FIN</pre>
+<h3>Diagrama: contador y ciclo Mientras</h3><p>Cuenta cuántos riesgos de la base de datos tienen nivel 4 o más.</p><pre class="mermaid">flowchart TD
+A([Inicio]) --> B[contador = 0 e i = 1]
+B --> C{i <= n?}
+C -- Sí --> D{nivel i >= 4?}
+D -- Sí --> E[contador = contador + 1]
+D -- No --> F[i = i + 1]
+E --> F
+F --> C
+C -- No --> G[/Escribir contador/]
+G --> H([Fin])</pre><h3>Diagrama: decisión múltiple</h3><p>Clasifica un riesgo según su nivel.</p><pre class="mermaid">flowchart TD
+A([Inicio]) --> B[/Leer nivel/]
+B --> C{nivel entre 1 y 5?}
+C -- No --> B
+C -- Sí --> D{nivel <= 2?}
+D -- Sí --> E[/Riesgo bajo/]
+D -- No --> F{nivel <= 4?}
+F -- Sí --> G[/Riesgo medio/]
+F -- No --> H[/Riesgo alto/]
+E --> I([Fin])
+G --> I
+H --> I</pre><h3>Prueba de escritorio</h3><div class="sc"><table><tr><th>Entrada</th><th>Longitud ≥ 8</th><th>Número y símbolo</th><th>Puntos</th><th>Salida</th></tr><tr><td>casa</td><td>No</td><td>No</td><td>0</td><td>Débil</td></tr><tr><td>Casa2026</td><td>Sí (+1)</td><td>No</td><td>1</td><td>Débil</td></tr><tr><td>Casa#2026</td><td>Sí (+1)</td><td>Sí (+2)</td><td>3</td><td>Segura</td></tr></table></div><p><b>Error encontrado:</b> la primera versión solo medía la longitud y calificaba "12345678" como segura. <b>Corrección:</b> agregué la decisión de números y símbolos. <b>Relación con la base de datos:</b> el resultado alimenta el campo nivel de la tabla Riesgo. La demostración de arriba amplía el criterio con mayúsculas y minúsculas.</p><h3>Otros algoritmos del proyecto</h3><ul><li>Secuencial: calcular el riesgo total (nivel × cantidad de datos expuestos).</li><li>Decisión doble: aprobar o rechazar un permiso de app.</li><li>Decisión múltiple: clasificar un dato como público, privado o sensible.</li><li>Contador: contar los riesgos de nivel 4 o más.</li><li>Acumulador: sumar los niveles para obtener el promedio.</li><li>Ciclo y validación: repetir la lectura hasta que el nivel esté entre 1 y 5.</li></ul>
+</div></section>
+
+<section id="recursos"><div class="w">
+<h2>Recursos</h2>
+<div class="g">
+<div class="card"><h3>Video 1</h3><p>Phishing y cómo identificarlo.</p><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=phishing+como+identificarlo">Ver videos</a></div>
+<div class="card"><h3>Video 2</h3><p>Privacidad y datos personales en internet.</p><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=privacidad+datos+personales+adolescentes">Ver videos</a></div>
+<div class="card"><h3>Infografía: antes de compartir un dato</h3><svg viewBox="0 0 300 200" width="100%" role="img" aria-label="Infografía de decisión"><g font-size="12" fill="currentColor" text-anchor="middle"><rect x="80" y="8" width="140" height="32" rx="8" fill="#ffd100"/><text x="150" y="29" fill="#0a2a6b">¿Quién me lo pide?</text><rect x="80" y="58" width="140" height="32" rx="8" fill="#1456c4"/><text x="150" y="79" fill="#fff">¿Para qué lo necesita?</text><rect x="80" y="108" width="140" height="32" rx="8" fill="#0a2a6b"/><text x="150" y="129" fill="#fff">¿Es público, privado o sensible?</text><rect x="20" y="158" width="120" height="32" rx="8" fill="#1456c4"/><text x="80" y="179" fill="#fff">Compartir con cuidado</text><rect x="160" y="158" width="120" height="32" rx="8" fill="#c0392b"/><text x="220" y="179" fill="#fff">No compartir</text></g></svg><p style="font-size:13px">Elaboración propia.</p></div>
+<div class="card" style="text-align:center"><h3>Código QR del sitio</h3><div id="qrc" style="display:inline-block;background:#fff;padding:10px"></div></div>
+</div>
+<h3 style="margin-top:20px">Galería</h3>
+<div class="g"><div class="card"><svg viewBox="0 0 120 80" width="100%" aria-label="Candado"><rect width="120" height="80" fill="#0a2a6b"/><rect x="40" y="38" width="40" height="28" rx="4" fill="#ffd100"/><path d="M48 38v-8a12 12 0 0 1 24 0v8" stroke="#ffd100" stroke-width="5" fill="none"/></svg><p style="font-size:13px">Contraseñas. Ilustración propia.</p></div><div class="card"><svg viewBox="0 0 120 80" width="100%" aria-label="Escudo"><rect width="120" height="80" fill="#1456c4"/><path d="M60 10l26 10v20c0 16-12 26-26 30-14-4-26-14-26-30V20z" fill="#ffd100"/><path d="M48 42l9 9 16-18" stroke="#0a2a6b" stroke-width="5" fill="none"/></svg><p style="font-size:13px">Protección. Ilustración propia.</p></div><div class="card"><svg viewBox="0 0 120 80" width="100%" aria-label="Alerta"><rect width="120" height="80" fill="#c0392b"/><path d="M60 14l30 54H30z" fill="#ffd100"/><rect x="57" y="32" width="6" height="20" fill="#0a2a6b"/><rect x="57" y="56" width="6" height="6" fill="#0a2a6b"/></svg><p style="font-size:13px">Alerta de phishing. Ilustración propia.</p></div></div>
+</div></section>
+
+<section id="quiz"><div class="w">
+<h2>Formulario interactivo: quiz de 10 preguntas</h2>
+<div id="qz"></div>
+<button class="btn" id="chk">Calificar</button> <span id="qr" style="margin-left:10px;font-weight:600"></span>
+</div></section>
+
+<section id="conclusiones"><div class="w">
+<h2>Conclusiones del análisis</h2>
+<p><b>Hallazgos:</b> los datos sensibles concentran el mayor riesgo, y las medidas simples (contraseñas largas, verificación en dos pasos, revisar permisos) previenen la mayoría de los casos. <b>Limitaciones:</b> los datos son simulados y pocos, y las categorías pueden tener sesgo de quien las definió. <b>Decisión posible:</b> activar la verificación en dos pasos y revisar los permisos de mis apps antes de instalar otras. <b>Riesgo de decidir sin información suficiente:</b> confiar en una medida que no protege contra el riesgo real, o compartir un dato sensible por no reconocer una suplantación.</p>
+</div></section>
+
+<section id="fuentes"><div class="w">
+<h2>Fuentes y créditos</h2>
+<ol><li>Congreso de la República de Colombia. <i>Ley Estatutaria 1581 de 2012, por la cual se dictan disposiciones generales para la protección de datos personales.</i> secretariasenado.gov.co</li><li>Superintendencia de Industria y Comercio. <i>Protección de datos personales.</i> sic.gov.co</li><li>MinTIC. <i>En TIC Confío.</i> mintic.gov.co</li><li>Policía Nacional de Colombia. <i>CAI Virtual.</i> caivirtual.policia.gov.co</li><li>INCIBE. <i>Internet Segura for Kids (IS4K).</i> incibe.es</li><li>Google. <i>Centro de seguridad.</i> safety.google</li></ol><p>Créditos: ilustraciones e infografía de elaboración propia. Videos: YouTube, según los enlaces de la sección Recursos. Gráficos con datos simulados.</p>
+</div></section>
+<footer><div class="w">Última actualización: 18 de noviembre de 2026 · Actividad de nivelación, Tecnología e Informática, grado 10° · Elaborado por Fabián Arturo Barragán Pimiento.</div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+// Gráficos SVG con datos ficticios
+const cats=["Público","Privado","Sensible"],cnt=[4,9,7],avg=[1.8,3.1,4.6];
+function bars(el,vals,max,fmt){const w=300,h=170,bw=60,g=(w-3*bw)/4;let s=`<svg viewBox="0 0 ${w} ${h}" width="100%" role="img" aria-label="Gráfico de barras">`;
+vals.forEach((v,i)=>{const bh=v/max*110,x=g+i*(bw+g),y=130-bh;s+=`<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="4" fill="#1456c4"/><text x="${x+bw/2}" y="${y-6}" text-anchor="middle" font-size="13" fill="currentColor">${fmt(v)}</text><text x="${x+bw/2}" y="152" text-anchor="middle" font-size="13" fill="currentColor">${cats[i]}</text>`});
+el.innerHTML=s+"</svg>"}
+bars($("c1"),cnt,10,v=>v);bars($("c2"),avg,5,v=>v.toFixed(1));
+// Evaluador de contraseñas
+$("pw").addEventListener("input",e=>{const p=e.target.value;let pts=0;const n=[];
+if(!p){$("bar").style.width="0";$("pwr").textContent="Escribe para evaluar.";return}
+if(p.length>=8)pts++;else n.push("usa 8 o más caracteres");
+if(/[A-Z]/.test(p)&&/[a-z]/.test(p))pts++;else n.push("mezcla mayúsculas y minúsculas");
+if(/\d/.test(p))pts++;else n.push("agrega números");
+if(/[^A-Za-z0-9]/.test(p))pts++;else n.push("agrega símbolos");
+const lv=["Muy débil","Débil","Media","Fuerte","Muy fuerte"][pts],col=["#c0392b","#c0392b","#e67e22","#1456c4","#1456c4"][pts];
+$("bar").style.width=(pts+1)*20+"%";$("bar").style.background=col;
+$("pwr").innerHTML=`<b>${lv}</b>`+(n.length?". Mejora: "+n.join(", ")+".":". Buen trabajo.")});
+// Detector de phishing
+document.querySelectorAll('.ph1').forEach(c=>c.addEventListener('change',()=>{let n=0;document.querySelectorAll('.ph1').forEach(x=>{if(x.checked)n++});const r=n<=1?'Riesgo bajo.':n<=3?'Mensaje sospechoso: verifica por otro medio.':'Probable phishing: no respondas ni abras enlaces.';$('phr').innerHTML='Señales: '+n+'. <b>'+r+'</b>'}));
+// Clasificador
+const cl=[["Público","Bajo","Puedes compartirlo, sin vincularlo a datos reales."],["Privado","Medio","Compártelo solo con personas de confianza."],["Privado","Alto","Revela dónde vives; evita publicarla."],["Sensible","Muy alto","Exige consentimiento y protección especial."],["Sensible","Muy alto","Dato biométrico: no se puede cambiar si se filtra."]];
+$("sel").addEventListener("change",e=>{const v=e.target.value;$("selr").innerHTML=v===""?"":`<b>${cl[v][0]}</b> · riesgo ${cl[v][1]}. ${cl[v][2]}`});
+// Quiz
+const Q=[["¿Cuál es un dato sensible?",["Tu apodo en un juego","Tu historia clínica","El nombre de tu colegio"],1],
+["¿Qué hace más fuerte una contraseña?",["Ser corta y fácil","Ser larga y única","Usar tu fecha de nacimiento"],1],
+["La ingeniería social consiste en…",["Engañar a personas para obtener datos","Programar una red social","Reparar equipos"],0],
+["Un mensaje urgente que pide tu clave probablemente es…",["Phishing","Una actualización normal","Un regalo"],0],
+["Antes de instalar una app conviene revisar sus…",["Colores","Permisos","Calificaciones de estilo"],1],
+["¿Qué es el consentimiento?",["Aceptar libre e informadamente el uso de tus datos","Dar tu clave a un amigo","Aceptar sin leer"],0],
+["La verificación en dos pasos sirve para…",["Hacer más lento el celular","Añadir una segunda barrera de seguridad","Borrar cuentas"],1],
+["Una red wifi pública es riesgosa para…",["Ver videos de gatos","Ingresar a tu banco","Leer noticias"],1],
+["Suplantar es…",["Hacerse pasar por otra persona","Cambiar de operador","Hacer una copia de seguridad"],0],
+["Lo mejor al recibir un enlace sospechoso es…",["Abrirlo rápido","No abrirlo y verificar por otro medio","Reenviarlo a todos"],1]];
+$("qz").innerHTML=Q.map((q,i)=>`<div class="q card" id="q${i}"><b>${i+1}. ${q[0]}</b>`+q[1].map((o,j)=>`<label><input type="radio" name="r${i}" value="${j}"> ${o}</label>`).join("")+`</div>`).join("");
+$("chk").onclick=()=>{let s=0,v=0;Q.forEach((q,i)=>{const c=document.querySelector(`input[name=r${i}]:checked`);const box=$("q"+i);box.style.borderColor="";if(c){v++;if(+c.value===q[2]){s++;box.style.borderColor="#1456c4"}else box.style.borderColor="#c0392b"}});
+$("qr").innerHTML=v<10?`<span class="no">Responde las 10 preguntas (${v}/10).</span>`:`<span class="ok">Puntaje: ${s} de 10</span>`};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js" onload="mermaid.initialize({startOnLoad:true})"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" onload="try{new QRCode(document.getElementById('qrc'),{text:location.href,width:140,height:140})}catch(e){}"></script>
+</body>
+</html>
